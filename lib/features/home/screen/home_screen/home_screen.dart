@@ -1,75 +1,51 @@
 import 'package:ecommerce_mobile/features/preference/preference.dart';
-import 'package:ecommerce_mobile/features/home/widget/food_item.dart';
-import 'package:ecommerce_mobile/components/app_back_button.dart';
-
+import 'package:ecommerce_mobile/features/home/screen/detail_screen/detail_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 part 'sections/header_section.dart';
-part 'sections/recomended_combo_section.dart';
-part 'sections/filtered_item_section.dart';
+part 'sections/featured_section.dart';
+part 'sections/categories_section.dart';
+part 'sections/banner_section.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key, required this.name});
 
   final String? name;
-  final List<String> category = [
-    'Hottest',
-    'Popular',
-    'Top',
-    'Most Liked',
-    'Recently Added',
-    'Newest',
-  ];
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 20), // sekali di sini
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Lokasi
-            Row(
+      backgroundColor: MainColors.whiteColor,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.location_on, color: Colors.black87),
-                const SizedBox(width: 8),
-                const Text(
-                  "Menteng, Jakarta Pusat",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const Icon(Icons.keyboard_arrow_down),
+                HeaderSection(name: ''),
+                const SizedBox(height: 24),
+                BannerSection(),
+                const SizedBox(height: 24),
+                CategoriesSection(),
+                const SizedBox(height: 30),
+                FeaturedSection(),
               ],
             ),
-            const SizedBox(height: 20),
-            // Searchbarnya
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: MainColors.blackColor[800]!,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  icon: Icon(Icons.search, color: MainColors.blackColor[400], size: 22,),
-                  hintStyle: const TextStyle(fontSize: 14),
-                  hintText: "Find cars, mobile phones and more...",
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20,),
-
-          ],
+          ),
         ),
       ),
     );
   }
-}
 
+  
+
+
+}

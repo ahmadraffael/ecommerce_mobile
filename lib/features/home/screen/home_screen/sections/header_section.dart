@@ -1,10 +1,7 @@
 part of '../home_screen.dart';
 
 class HeaderSection extends StatelessWidget {
-  const HeaderSection({
-    super.key,
-    required this.name,
-  });
+  const HeaderSection({super.key, required this.name});
 
   final String? name;
 
@@ -13,37 +10,40 @@ class HeaderSection extends StatelessWidget {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(cusicon.sort),
-            Icon(cusicon.cart, color: MainColors.primaryColor, size: 25),
+            const Icon(Icons.location_on, color: Colors.black87),
+            const SizedBox(width: 8),
+            const Text(
+              "Cildeug, Tangerang",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+            const Icon(Icons.keyboard_arrow_down),
           ],
         ),
-        SizedBox(height: 30),
-        Text(
-          'Hello $name, What fruit salad combo do you want today?',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-        ),
-        SizedBox(height: 30),
-            Row(
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Search something',
-                      prefixIcon: Icon(
-                        cusicon.search,
-                        color: MainColors.greyColor[200],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 18),
-                Icon(cusicon.setting),
-              ],
+        const SizedBox(height: 24),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          decoration: BoxDecoration(
+            border: Border.all(color: MainColors.blackColor[800]!),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              icon: Icon(
+                Icons.search,
+                color: MainColors.blackColor[200],
+                size: 22,
+              ),
+              hintStyle: TextStyle(
+                fontSize: 12,
+                color: MainColors.blackColor[800],
+              ),
+              hintText: "Find cars, mobile phones and more...",
+              border: InputBorder.none,
             ),
+          ),
+        ),
       ],
     );
   }
 }
-

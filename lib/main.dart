@@ -40,14 +40,17 @@ class MyApp extends StatelessWidget {
         //   ),
         // ),
         appBarTheme: AppBarTheme(
+          toolbarHeight: 50,
           backgroundColor: MainColors.primaryColor,
           surfaceTintColor: MainColors.primaryColor,
           titleTextStyle: TextStyle(
             color: MainColors.whiteColor,
             fontSize: 20,
-            fontWeight: FontWeight.bold,
-          )
+            fontWeight: FontWeight.w600,
+          ),
+          iconTheme: IconThemeData(size: 20, color: MainColors.whiteColor),
         ),
+
       ),
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),

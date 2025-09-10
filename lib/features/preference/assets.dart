@@ -15,5 +15,22 @@ class MainAssets {
   static const olxLogo = '${path}olx_logo.svg';
   static const googleSvg = '${path}google_logo.svg';
   static const appleSvg = '${path}apple_logo.svg';
+  static const banner1 = '${path}banner_1.png';
+  static const banner2 = '${path}banner_2.png';
+  static const banner3 = '${path}banner_3.png';
+  static const product1 = '${path}product_1.png';
+  static const product2 = '${path}product_2.png';
+  static const product3 = '${path}product_3.png';
+  static const product4 = '${path}product_4.jpg';
+  static const product5 = '${path}product_5.jpg';
+  static const product6 = '${path}product_6.jpg';
+  static const booked = '${path}booked.png';
+  static const addPost = '${path}add_some_post.png';
+  static const profile1 = '${path}profile_1.png';
+  static const profile2 = '${path}profile_2.png';
+  static const profile3 = '${path}profile_3.png';
+  static const profile4 = '${path}profile_4.png';
+  static const profile5 = '${path}profile_5.png';
+  static const profile6 = '${path}profile_6.png';
 
 }

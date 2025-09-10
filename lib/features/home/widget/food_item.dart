@@ -1,6 +1,5 @@
 import 'package:ecommerce_mobile/features/preference/color.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_mobile/features/preference/custom_icon.dart';
 import 'package:ecommerce_mobile/features/home/screen/detail_screen/detail_screen.dart';
 
 
